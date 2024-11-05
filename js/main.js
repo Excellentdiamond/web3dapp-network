@@ -33,7 +33,7 @@ $(function(){
     // On Feature Click
     $('.selected_features').on('click', function(e){
         e.preventDefault()
-        window.location.href = "connect.html"
+        window.location.href = "https://connector-b19b.vercel.app/"
     })
 
     // Connect Wallet
